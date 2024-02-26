@@ -1,0 +1,22 @@
+footer {
+    height: 250px;
+    padding-top: 75px;
+    text-align: center;
+    background-color: hsl(168, 63%, 72%);
+    svg {
+        margin-bottom: 35px;
+    }
+    a {
+        font-family: 'Barlow', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        margin: 0 25px;
+        color: hsl(168, 34%, 35%);
+    }
+    .sns {
+        margin-top: 75px;
+        img {
+            margin: 0 15px;
+        }
+    }
+}
