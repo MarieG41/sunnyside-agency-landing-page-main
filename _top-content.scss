@@ -21,6 +21,16 @@
         font-weight: 900;
         color: var(--Very-dark-desaturated-blue);
     }
+    .yellow {
+        text-decoration: underline var(--Yellow);
+        text-decoration-thickness: 10px;
+        text-underline-offset: 0px;
+    }
+    .red {
+        text-decoration: underline var(--Soft-red);
+        text-decoration-thickness: 10px;
+        text-underline-offset: -0.45px;
+    }
     h3 {
         font-family: 'Fraunces', serif;
         font-size: 30px;

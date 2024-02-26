@@ -1,6 +1,6 @@
 :root {
-  --Soft-red: hsl(7, 99%, 70%);
-  --Yellow: hsl(51, 100%, 49%);
+  --Soft-red: hsla(7, 99%, 70%, 0.532);
+  --Yellow: hsla(51, 100%, 49%, 0.532);
   --Dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
   --Dark-blue-photography-text: hsl(198, 62%, 26%);
   --Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
@@ -87,6 +87,16 @@ header nav .nav-links button {
   font-family: "Fraunces", serif;
   font-weight: 900;
   color: var(--Very-dark-desaturated-blue);
+}
+.content-main .yellow {
+  text-decoration: underline var(--Yellow);
+  text-decoration-thickness: 10px;
+  text-underline-offset: 0px;
+}
+.content-main .red {
+  text-decoration: underline var(--Soft-red);
+  text-decoration-thickness: 10px;
+  text-underline-offset: -0.45px;
 }
 .content-main h3 {
   font-family: "Fraunces", serif;
