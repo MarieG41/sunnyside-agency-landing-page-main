@@ -5,8 +5,8 @@ header {
         left: 0;
         padding: 40px 0;
         display: flex;
-        margin: 0 40px 0 0;
         img {
+            margin: 0 40px;
             width: 160px;
             height: 35px;
             @include media($until: tablet) {
@@ -15,7 +15,7 @@ header {
             }
         }
         .nav-links {
-            margin-left: 1100px;
+            margin-left: 900px;
             display: inline-block;
             @include media($from: wide) {
                 margin-left: 850px;

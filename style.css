@@ -46,9 +46,9 @@ header nav {
   left: 0;
   padding: 40px 0;
   display: flex;
-  margin: 0 40px 0 0;
 }
 header nav img {
+  margin: 0 40px;
   width: 160px;
   height: 35px;
 }
@@ -59,7 +59,7 @@ header nav img {
   }
 }
 header nav .nav-links {
-  margin-left: 1100px;
+  margin-left: 900px;
   display: inline-block;
 }
 @media all and (min-width: 1200px) {
