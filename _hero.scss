@@ -9,10 +9,24 @@ header {
         img {
             width: 160px;
             height: 35px;
+            @include media($until: tablet) {
+                width: 124px;
+                height: 25px;
+            }
         }
         .nav-links {
             margin-left: 1250px;
             display: inline-block;
+            @include media($from: wide) {
+                margin-left: 850px;
+            }
+            @include media($until: tablet) {
+                margin-left: 150px;
+                img {
+                    width: 30px;
+                    height: 23px;
+                }
+            }
             a {
                 color: var(--White);
                 font-family: 'Barlow', sans-serif;
@@ -27,6 +41,11 @@ header {
                 font-family: 'Fraunces', serif;
                 font-weight: 900;
             }
+            button:hover {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.377);
+                color: var(--White);
+            }
         }
     }
 }
@@ -37,6 +56,12 @@ header {
     left: 0;
     z-index: 5;
     margin-top: 330px;
+    @include media($from: wide) {
+        margin-top: 210px;
+    }
+    @include media($until: tablet) {
+        margin-top: 100px;
+    }
     h1 {
         margin-left: 545px;
         margin-bottom: 100px;
@@ -44,11 +69,32 @@ header {
         color: var(--White);
         font-family: 'Fraunces', serif;
         font-weight: 900;
+        @include media($from: wide) {
+            margin-left: 350px;
+        }
+        @include media($until: tablet) {
+            margin-left: 0;
+            font-size: 40px;
+            width: 320px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
         span {
             margin-left: 20px;
+            @include media($until: tablet) {
+                margin-left: 10px;
+                display: block;
+            }
         }
     }
     img {
         margin-left: 980px;
+        @include media($from: wide) {
+            margin-left: 750px;
+        }
+        @include media($until: tablet) {
+            margin-left: 170px;
+        }
     }
 }

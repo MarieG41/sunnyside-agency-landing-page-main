@@ -1,8 +1,13 @@
 .content-main {
     display: grid;
     grid-template-columns: 1002px 900px;
+    @include media($from: wide) {
+        grid-template-columns: 760px 760px;
+    }
+    @include media($until: tablet) {
+        display: block;
+    }
     img {
-        width: 100%;
         height: 100%;
     }
     h2 {
@@ -10,11 +15,17 @@
         font-size: 50px;
         font-weight: 900;
         color: var(--Very-dark-desaturated-blue);
+        @include media($until: tablet) {
+            font-size: 35px;
+        }
     }
     p {
         font-family: 'Barlow', sans-serif;
         font-size: 18px;
         color: var(--Dark-grayish-blue);
+        @include media($until: tablet) {
+            font-size: 16px;
+        }
     }
     a {
         font-family: 'Fraunces', serif;
@@ -22,12 +33,22 @@
         color: var(--Very-dark-desaturated-blue);
     }
     .yellow {
+        text-decoration: underline var(--Yellow-transparent);
+        text-decoration-thickness: 10px;
+        text-underline-offset: 0px;
+    }
+    .yellow:hover {
         text-decoration: underline var(--Yellow);
         text-decoration-thickness: 10px;
         text-underline-offset: 0px;
     }
     .red {
         text-decoration: underline var(--Soft-red);
+        text-decoration-thickness: 10px;
+        text-underline-offset: -0.45px;
+    }
+    .red:hover {
+        text-decoration: underline var(--Red);
         text-decoration-thickness: 10px;
         text-underline-offset: -0.45px;
     }
@@ -39,26 +60,52 @@
     }
     .brand {
         padding: 200px;
+        @include media($from: wide) {
+            padding: 100px 50px 0 100px;
+        }
+        @include media($until: tablet) {
+            padding: 60px 20px;
+            text-align: center;
+        }
         h2 {
             margin-bottom: 30px;
             width: 450px;
+            @include media($until: tablet) {
+                width: 350px;
+            }
         }
         p {
             width: 450px;
             line-height: 150%;
             margin-bottom: 50px;
+            @include media($until: tablet) {
+                width: 350px;
+            }
         }
     }
     .audience {
         padding: 250px;
+        @include media($from: wide) {
+           padding: 150px 50px 0 150px;
+        }
+        @include media($until: tablet) {
+            padding: 60px 20px;
+            text-align: center;
+        }
         h2 {
             margin-bottom: 30px;
             width: 550px;
+            @include media($until: tablet) {
+                width: 350px;
+            }
         }
         p {
             width: 450px;
             line-height: 150%;
             margin-bottom: 50px;
+            @include media($until: tablet) {
+                width: 350px;
+            }
         }
     }
     .div-text-graphic {
@@ -67,6 +114,15 @@
         left: 250px;
         width: 500px;
         text-align: center;
+        @include media($from: wide) {
+            top: 2525px;
+            left: 120px;
+        }
+        @include media($until: tablet) {
+           top: 2300px;
+           left: 15px;
+           width: 350px;
+        }
         h3 {
             color: var(--Dark-desaturated-cyan-graphic-design-text);
             margin-bottom: 50px;
@@ -83,6 +139,15 @@
         left: 1250px;
         width: 400px;
         text-align: center;
+        @include media($from: wide) {
+            top: 2500px;
+            left: 950px;
+        }
+        @include media($until: tablet) {
+            width: 350px;
+            left: 15px;
+            top: 2900px;
+        }
         h3 {
             color: var(--Dark-blue-photography-text);
             margin-bottom: 50px;
@@ -96,8 +161,15 @@
 
 .gallery {
     display: flex;
+    @include media($until: tablet) {
+        display: grid;
+        grid-template-columns: 187px 187px;
+    }
     img {
         width: 25%;
+        @include media($until: tablet) {
+           width: 100%;
+        }
     }
     
 }

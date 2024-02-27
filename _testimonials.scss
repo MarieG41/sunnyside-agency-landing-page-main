@@ -1,6 +1,9 @@
 .clients {
     margin-top: 150px;
     margin-bottom: 150px;
+    @include media($until: tablet) {
+        margin: 75px 0;
+    }
     h4 {
         font-family: 'Fraunces', serif;
         font-size: 18px;
@@ -18,8 +21,14 @@
         grid-row: 930px;
         justify-content: center;
         gap: 100px;
+        @include media($until: tablet) {
+            display: block;
+        }
         .clients-1, .clients-2, .clients-3 {
             text-align: center;
+            @include media($until: tablet) {
+                padding: 0 20px;
+            }
             img {
                 clip-path: ellipse(50% 50%);
                 width: 20%;
@@ -40,6 +49,9 @@
                 font-family: 'Barlow', sans-serif;
                 color: var(--Grayish-blue);
                 font-size: 14px;
+                @include media($until: tablet) {
+                    margin-bottom: 75px;
+                }
             }
         }
     }

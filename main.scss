@@ -1,6 +1,10 @@
+@import 'sass-queries';
+
 :root {
     --Soft-red: hsla(7, 99%, 70%, 0.532);
-    --Yellow: hsla(51, 100%, 49%, 0.532);
+    --Red:rgb(254, 121, 103);
+    --Yellow-transparent: hsla(51, 100%, 49%, 0.532);
+    --Yellow: hsl(51, 100%, 49%);
     --Dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
     --Dark-blue-photography-text: hsl(198, 62%, 26%);
     --Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
@@ -10,6 +14,18 @@
     --Dark-grayish-blue: hsl(232, 10%, 55%);
     --Grayish-blue: hsl(210, 4%, 67%);
     --White: hsl(0, 0%, 100%);
+}
+
+.hidden-mobile {
+    display: none;
+    @include media($until: tablet) {
+        display: block;
+    }
+}
+@include media($until: tablet) {
+    .hidden {
+        display: none
+    }
 }
 
 @import 'hero';

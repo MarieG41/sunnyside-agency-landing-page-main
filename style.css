@@ -1,6 +1,15 @@
+/**
+* SassQueries
+* Manage media-queries in Sass easily.
+*
+* @author     Samuel Marchal (zessx)
+* @version    0.3
+*/
 :root {
   --Soft-red: hsla(7, 99%, 70%, 0.532);
-  --Yellow: hsla(51, 100%, 49%, 0.532);
+  --Red:rgb(254, 121, 103);
+  --Yellow-transparent: hsla(51, 100%, 49%, 0.532);
+  --Yellow: hsl(51, 100%, 49%);
   --Dark-desaturated-cyan-graphic-design-text: hsl(167, 40%, 24%);
   --Dark-blue-photography-text: hsl(198, 62%, 26%);
   --Dark-moderate-cyan-footer: hsl(168, 34%, 41%);
@@ -11,6 +20,20 @@
   --White: hsl(0, 0%, 100%);
 }
 
+.hidden-mobile {
+  display: none;
+}
+@media all and (max-width: 767px) {
+  .hidden-mobile {
+    display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .hidden {
+    display: none;
+  }
+}
 header nav {
   position: absolute;
   top: 0;
@@ -23,9 +46,29 @@ header nav img {
   width: 160px;
   height: 35px;
 }
+@media all and (max-width: 767px) {
+  header nav img {
+    width: 124px;
+    height: 25px;
+  }
+}
 header nav .nav-links {
   margin-left: 1250px;
   display: inline-block;
+}
+@media all and (min-width: 1200px) {
+  header nav .nav-links {
+    margin-left: 850px;
+  }
+}
+@media all and (max-width: 767px) {
+  header nav .nav-links {
+    margin-left: 150px;
+  }
+  header nav .nav-links img {
+    width: 30px;
+    height: 23px;
+  }
 }
 header nav .nav-links a {
   color: var(--White);
@@ -41,6 +84,11 @@ header nav .nav-links button {
   font-family: "Fraunces", serif;
   font-weight: 900;
 }
+header nav .nav-links button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.377);
+  color: var(--White);
+}
 
 .hero-section {
   position: absolute;
@@ -48,6 +96,16 @@ header nav .nav-links button {
   left: 0;
   z-index: 5;
   margin-top: 330px;
+}
+@media all and (min-width: 1200px) {
+  .hero-section {
+    margin-top: 210px;
+  }
+}
+@media all and (max-width: 767px) {
+  .hero-section {
+    margin-top: 100px;
+  }
 }
 .hero-section h1 {
   margin-left: 545px;
@@ -57,19 +115,59 @@ header nav .nav-links button {
   font-family: "Fraunces", serif;
   font-weight: 900;
 }
+@media all and (min-width: 1200px) {
+  .hero-section h1 {
+    margin-left: 350px;
+  }
+}
+@media all and (max-width: 767px) {
+  .hero-section h1 {
+    margin-left: 0;
+    font-size: 40px;
+    width: 320px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
 .hero-section h1 span {
   margin-left: 20px;
 }
+@media all and (max-width: 767px) {
+  .hero-section h1 span {
+    margin-left: 10px;
+    display: block;
+  }
+}
 .hero-section img {
   margin-left: 980px;
+}
+@media all and (min-width: 1200px) {
+  .hero-section img {
+    margin-left: 750px;
+  }
+}
+@media all and (max-width: 767px) {
+  .hero-section img {
+    margin-left: 170px;
+  }
 }
 
 .content-main {
   display: grid;
   grid-template-columns: 1002px 900px;
 }
+@media all and (min-width: 1200px) {
+  .content-main {
+    grid-template-columns: 760px 760px;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-main {
+    display: block;
+  }
+}
 .content-main img {
-  width: 100%;
   height: 100%;
 }
 .content-main h2 {
@@ -78,10 +176,20 @@ header nav .nav-links button {
   font-weight: 900;
   color: var(--Very-dark-desaturated-blue);
 }
+@media all and (max-width: 767px) {
+  .content-main h2 {
+    font-size: 35px;
+  }
+}
 .content-main p {
   font-family: "Barlow", sans-serif;
   font-size: 18px;
   color: var(--Dark-grayish-blue);
+}
+@media all and (max-width: 767px) {
+  .content-main p {
+    font-size: 16px;
+  }
 }
 .content-main a {
   font-family: "Fraunces", serif;
@@ -89,12 +197,22 @@ header nav .nav-links button {
   color: var(--Very-dark-desaturated-blue);
 }
 .content-main .yellow {
+  text-decoration: underline var(--Yellow-transparent);
+  text-decoration-thickness: 10px;
+  text-underline-offset: 0px;
+}
+.content-main .yellow:hover {
   text-decoration: underline var(--Yellow);
   text-decoration-thickness: 10px;
   text-underline-offset: 0px;
 }
 .content-main .red {
   text-decoration: underline var(--Soft-red);
+  text-decoration-thickness: 10px;
+  text-underline-offset: -0.45px;
+}
+.content-main .red:hover {
+  text-decoration: underline var(--Red);
   text-decoration-thickness: 10px;
   text-underline-offset: -0.45px;
 }
@@ -107,26 +225,68 @@ header nav .nav-links button {
 .content-main .brand {
   padding: 200px;
 }
+@media all and (min-width: 1200px) {
+  .content-main .brand {
+    padding: 100px 50px 0 100px;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-main .brand {
+    padding: 60px 20px;
+    text-align: center;
+  }
+}
 .content-main .brand h2 {
   margin-bottom: 30px;
   width: 450px;
+}
+@media all and (max-width: 767px) {
+  .content-main .brand h2 {
+    width: 350px;
+  }
 }
 .content-main .brand p {
   width: 450px;
   line-height: 150%;
   margin-bottom: 50px;
 }
+@media all and (max-width: 767px) {
+  .content-main .brand p {
+    width: 350px;
+  }
+}
 .content-main .audience {
   padding: 250px;
+}
+@media all and (min-width: 1200px) {
+  .content-main .audience {
+    padding: 150px 50px 0 150px;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-main .audience {
+    padding: 60px 20px;
+    text-align: center;
+  }
 }
 .content-main .audience h2 {
   margin-bottom: 30px;
   width: 550px;
 }
+@media all and (max-width: 767px) {
+  .content-main .audience h2 {
+    width: 350px;
+  }
+}
 .content-main .audience p {
   width: 450px;
   line-height: 150%;
   margin-bottom: 50px;
+}
+@media all and (max-width: 767px) {
+  .content-main .audience p {
+    width: 350px;
+  }
 }
 .content-main .div-text-graphic {
   position: absolute;
@@ -134,6 +294,19 @@ header nav .nav-links button {
   left: 250px;
   width: 500px;
   text-align: center;
+}
+@media all and (min-width: 1200px) {
+  .content-main .div-text-graphic {
+    top: 2525px;
+    left: 120px;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-main .div-text-graphic {
+    top: 2300px;
+    left: 15px;
+    width: 350px;
+  }
 }
 .content-main .div-text-graphic h3 {
   color: var(--Dark-desaturated-cyan-graphic-design-text);
@@ -151,6 +324,19 @@ header nav .nav-links button {
   width: 400px;
   text-align: center;
 }
+@media all and (min-width: 1200px) {
+  .content-main .div-text-photo {
+    top: 2500px;
+    left: 950px;
+  }
+}
+@media all and (max-width: 767px) {
+  .content-main .div-text-photo {
+    width: 350px;
+    left: 15px;
+    top: 2900px;
+  }
+}
 .content-main .div-text-photo h3 {
   color: var(--Dark-blue-photography-text);
   margin-bottom: 50px;
@@ -163,13 +349,29 @@ header nav .nav-links button {
 .gallery {
   display: flex;
 }
+@media all and (max-width: 767px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 187px 187px;
+  }
+}
 .gallery img {
   width: 25%;
+}
+@media all and (max-width: 767px) {
+  .gallery img {
+    width: 100%;
+  }
 }
 
 .clients {
   margin-top: 150px;
   margin-bottom: 150px;
+}
+@media all and (max-width: 767px) {
+  .clients {
+    margin: 75px 0;
+  }
 }
 .clients h4 {
   font-family: "Fraunces", serif;
@@ -189,8 +391,18 @@ header nav .nav-links button {
   justify-content: center;
   gap: 100px;
 }
+@media all and (max-width: 767px) {
+  .clients .clients-grid {
+    display: block;
+  }
+}
 .clients .clients-grid .clients-1, .clients .clients-grid .clients-2, .clients .clients-grid .clients-3 {
   text-align: center;
+}
+@media all and (max-width: 767px) {
+  .clients .clients-grid .clients-1, .clients .clients-grid .clients-2, .clients .clients-grid .clients-3 {
+    padding: 0 20px;
+  }
 }
 .clients .clients-grid .clients-1 img, .clients .clients-grid .clients-2 img, .clients .clients-grid .clients-3 img {
   clip-path: ellipse(50% 50%);
@@ -213,6 +425,11 @@ header nav .nav-links button {
   color: var(--Grayish-blue);
   font-size: 14px;
 }
+@media all and (max-width: 767px) {
+  .clients .clients-grid .clients-1 h6, .clients .clients-grid .clients-2 h6, .clients .clients-grid .clients-3 h6 {
+    margin-bottom: 75px;
+  }
+}
 
 footer {
   height: 250px;
@@ -230,11 +447,17 @@ footer a {
   margin: 0 25px;
   color: hsl(168, 34%, 35%);
 }
+footer a:hover {
+  color: var(--White);
+}
 footer .sns {
   margin-top: 75px;
 }
-footer .sns img {
+footer .sns svg {
   margin: 0 15px;
+}
+footer .sns path:hover {
+  fill: var(--White);
 }
 
 /*# sourceMappingURL=style.css.map */
