@@ -16,6 +16,11 @@
     --White: hsl(0, 0%, 100%);
 }
 
+.hidden-mobile-nav{
+    @include media($until: tablet) {
+        display: none;
+    }
+}
 .hidden-mobile {
     display: none;
     @include media($until: tablet) {

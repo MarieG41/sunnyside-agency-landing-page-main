@@ -20,6 +20,12 @@
   --White: hsl(0, 0%, 100%);
 }
 
+@media all and (max-width: 767px) {
+  .hidden-mobile-nav {
+    display: none;
+  }
+}
+
 .hidden-mobile {
   display: none;
 }
@@ -88,6 +94,41 @@ header nav .nav-links button:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.377);
   color: var(--White);
+}
+@media all and (max-width: 767px) {
+  header .nav-mobile-shape {
+    z-index: 6;
+    top: 125px;
+    height: 300px;
+    position: absolute;
+    width: 325px;
+    background-color: var(--White);
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 25px;
+  }
+  header .nav-mobile-shape .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 40px 0;
+  }
+  header .nav-mobile-shape .nav-mobile a {
+    color: var(--Dark-grayish-blue);
+    font-family: "Barlow", sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  header .nav-mobile-shape .nav-mobile button {
+    border: none;
+    border-radius: 20px;
+    padding: 15px 20px;
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    background-color: var(--Yellow);
+  }
 }
 
 .hero-section {
